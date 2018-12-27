@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <span>请输入：</span>
+        <input type="text" id="txt" onchange="changeHandler(this.value)">
+        <p id="show-txt">
+            {{txtVal}}
+        </p>
+        {{list}}
+        <button onclick="addItem()">增加</button>
+        <ul>
+            <li v-for="">example1</li>
+            <li>example2</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+let dataHandler = {
+    set: function(obj, prop, value) {
+        obj[prop] = value;
+        triggerDomChange(prop);
+    },
+    get: function(target, name){
+        return name in target ? target[name] : '';
+    }
+};
+let dataSet = new Proxy({}, dataHandler);
+import {dataSet} from "./data.js";
+let relateiveDoms = {};
+
+function traversal(node){
+      //对node的处理
+      var i = 0, childNodes = node.childNodes,item;
+      for(; i < childNodes.length ; i++){
+            item = childNodes[i];
+            if (item && item.nodeType === 3){
+                let text = item.textContent || ""
+                let reg = new RegExp(/{{(.*)}}/, 'gi')
+                if (text.match(reg)) {
+                    // node.innerText = '';
+                    let res = reg.exec(text);
+                    if (res.length > 1) {
+                        if (relateiveDoms[res[1]]) {
+                            relateiveDoms[res[1]].push(item)
+                        } else {
+                            relateiveDoms[res[1]] = [item]
+                        }
+                        item.textContent = ''
+                    }
+                }
+            }
+            if(item.nodeType === 1){
+                //递归先序遍历子节点
+                traversal(item);
+            }
+      }
+  }
+
+function initRely() {
+    let app = document.getElementById('app')
+    traversal(app);
+    // relateiveDoms['txtVal'] = [document.getElementById('show-txt')];
+}
+initRely();
+
+function triggerDomChange(name) {
+    relateiveDoms[name] && relateiveDoms[name].forEach(item=> {
+        item.textContent = dataSet[name]
+    }, this)
+}
+
+dataSet.txtVal = '';
+dataSet.list = [];
+function changeHandler(val) {
+    dataSet.txtVal = val
+}
+
+function addItem() {
+    if (dataSet.txtVal) {
+        dataSet.list = [...dataSet.list, dataSet.txtVal]
+    }
+}
+
+
+</script>
