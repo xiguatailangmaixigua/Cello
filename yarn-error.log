@@ -1,0 +1,63 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.9.4/libexec/bin/yarn.js add cerate-rollup-config -S
+
+PATH: 
+  /Users/zhouqingyi/repos/risk_management_fe/depot_tools:/Users/zhouqingyi/repos/go_path//bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/zhouqingyi/Library/Android/sdk/tools:/Users/zhouqingyi/Library/Android/sdk/platform-tools:/Users/zhouqingyi/App/thrift:/usr/local:/Users/zhouqingyi/.nvm/versions/node/v8.9.1/lib:/Users/zhouqingyi/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/usr/local/go/bin:/opt/tiger/ss_bin:/usr/local/jdk/bin:/usr/sbin/:/opt/tiger/ss_lib/bin:/opt/tiger/cpplib/bin:/opt/tiger/ss_lib/python_package/lib/python2.7/site-packages/django/bin:/opt/tiger/yarn_deploy/hadoop/bin/:/opt/tiger/yarn_deploy/hive/bin/:/opt/tiger/yarn_deploy/jdk/bin/:/opt/tiger/hadoop_deploy/jython-2.5.2/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin/:/Users/zhouqingyi/repos/go_path//bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/zhouqingyi/Library/Android/sdk/tools:/Users/zhouqingyi/Library/Android/sdk/platform-tools:/Users/zhouqingyi/App/thrift:/usr/local:/Users/zhouqingyi/.nvm/versions/node/v8.9.1/lib:/usr/local/Cellar/mongodb/4.0.3_1/bin
+
+Yarn version: 
+  1.9.4
+
+Node version: 
+  12.14.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: http://bnpm.byted.org/cerate-rollup-config: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.9.4/libexec/lib/cli.js:64202:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.9.4/libexec/lib/cli.js:137468:22)
+      at Request.emit (events.js:223:5)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.9.4/libexec/lib/cli.js:138440:10)
+      at Request.emit (events.js:223:5)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.9.4/libexec/lib/cli.js:138362:12)
+      at Object.onceWrapper (events.js:312:28)
+      at IncomingMessage.emit (events.js:228:7)
+      at endReadableNT (_stream_readable.js:1185:12)
+      at processTicksAndRejections (internal/process/task_queues.js:81:21)
+
+npm manifest: 
+  {
+    "name": "Cello",
+    "version": "1.0.0",
+    "description": "Cello 大提琴 数据绑定练习",
+    "main": "data.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "build": "cross-env NODE_ENV=production rollup -c ./rollup.config.js",
+      "server": "cross-env NODE_ENV=development rollup -c ./rollup.config.js --watch"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/xiguatailangmaixigua/Cello.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/xiguatailangmaixigua/Cello/issues"
+    },
+    "homepage": "https://github.com/xiguatailangmaixigua/Cello#readme",
+    "devDependencies": {
+      "babel": "^6.23.0"
+    },
+    "dependencies": {
+      "cross-env": "^7.0.2"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

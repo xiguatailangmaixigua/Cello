@@ -1,0 +1,35 @@
+{
+  "name": "Cello",
+  "version": "1.0.0",
+  "description": "Cello 大提琴 数据绑定练习",
+  "main": "data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "cross-env NODE_ENV=production rollup -c ./rollup.config.js",
+    "server": "cross-env NODE_ENV=development rollup -c ./rollup.config.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xiguatailangmaixigua/Cello.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xiguatailangmaixigua/Cello/issues"
+  },
+  "homepage": "https://github.com/xiguatailangmaixigua/Cello#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.10.4",
+    "babel": "^6.23.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-latest": "^6.24.1",
+    "rollup-plugin-babel": "^4.4.0"
+  },
+  "dependencies": {
+    "@babel/core": "^7.10.4",
+    "create-rollup-config": "^2.0.1",
+    "cross-env": "^7.0.2",
+    "rollup-plugin-html": "^0.2.1"
+  }
+}
